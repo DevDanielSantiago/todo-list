@@ -9,16 +9,10 @@ import "./styles.css";
 interface ActivityProps {
   name: string;
   description: string | null;
-  deadline: Date | null;
   concludedAt: Date | null;
 }
 
-function ActivityComponent({
-  name,
-  description,
-  deadline,
-  concludedAt,
-}: ActivityProps) {
+function ActivityComponent({ name, description, concludedAt }: ActivityProps) {
   return (
     <div className="c-todo_activity">
       <div className="c-todo_activity-main">
@@ -26,11 +20,6 @@ function ActivityComponent({
         <div className="c-todo_about">
           <h3 className="c-todo_name">{name}</h3>
           {description && <p className="c-todo_description">{description}</p>}
-          {deadline && (
-            <span className="c-todo_expiration">
-              {deadline?.toDateString()}
-            </span>
-          )}
         </div>
       </div>
 

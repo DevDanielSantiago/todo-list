@@ -15,7 +15,6 @@ function ListTemplate() {
           key={index}
           name={activity.name}
           description={activity.description}
-          deadline={activity.deadline}
           concludedAt={activity.concludedAt}
         />
       ))}
