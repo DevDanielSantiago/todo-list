@@ -5,3 +5,8 @@ export interface List {
   title: string;
   activities: Activity[];
 }
+
+export interface ListName {
+  id: string;
+  title: string;
+}
