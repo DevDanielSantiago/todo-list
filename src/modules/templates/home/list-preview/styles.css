@@ -9,8 +9,6 @@
 
   border-radius: 6px;
 
-  cursor: pointer;
-
   .c-edit,
   .c-delete {
     position: absolute;
@@ -24,6 +22,7 @@
     right: 8px;
 
     &:hover {
+      cursor: pointer;
       color: blue;
     }
   }
@@ -32,6 +31,7 @@
     right: 28px;
 
     &:hover {
+      cursor: pointer;
       color: red;
     }
   }
@@ -45,6 +45,12 @@
     overflow: hidden;
     text-overflow: ellipsis;
     text-wrap: nowrap;
+
+    &:hover {
+      cursor: pointer;
+
+      color: gray;
+    }
   }
 
   .c-preview_activities {
@@ -53,6 +59,12 @@
 
     gap: 2px;
     margin-top: 12px;
+
+    &:hover {
+      cursor: pointer;
+
+      color: gray;
+    }
 
     .c-preview_activity {
       display: flex;
