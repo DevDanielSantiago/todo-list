@@ -1,0 +1,70 @@
+.c-todo_activity {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-inline: 10px;
+  padding-block: 10px;
+
+  border-bottom: 1px solid black;
+
+  .c-todo_activity-main {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    .c-todo_about {
+      display: flex;
+      flex-direction: column;
+
+      .c-todo_name {
+        font-size: 16px;
+        line-height: 150%;
+      }
+
+      .c-todo_description {
+        font-size: 12px;
+        line-height: 140%;
+      }
+
+      .c-todo_expiration {
+        font-size: 12px;
+        line-height: 140%;
+      }
+    }
+  }
+
+  .c-todo_activity_options {
+    display: flex;
+    flex-direction: row;
+
+    gap: 8px;
+
+    .c-edit,
+    .c-delete {
+      opacity: 0;
+      visibility: hidden;
+
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .c-edit:hover {
+      color: blue;
+    }
+
+    .c-delete:hover {
+      color: red;
+    }
+  }
+}
+
+.c-todo_activity:hover {
+  .c-edit,
+  .c-delete {
+    opacity: 1;
+    visibility: visible;
+
+    cursor: pointer;
+  }
+}
