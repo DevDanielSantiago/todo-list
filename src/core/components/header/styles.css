@@ -1,0 +1,20 @@
+.c-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 40px;
+
+  .c-header_title {
+    font-size: 30px;
+    line-height: 160%;
+  }
+
+  .c-header_button {
+    padding: 6px 14px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
