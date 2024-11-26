@@ -1,0 +1,18 @@
+.c-preview_list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 230px);
+  gap: 12px;
+}
+
+.c-dialog_title {
+  font-weight: 600 !important;
+  padding-bottom: 0 !important;
+}
+
+.c-dialog_content {
+  padding-top: 8px !important;
+}
+
+.c-button {
+  font-weight: 600 !important;
+}
