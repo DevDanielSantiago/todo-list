@@ -1,0 +1,13 @@
+.c-todo {
+  display: flex;
+  flex-direction: column;
+
+  .c-todo_title {
+    font-size: 28px;
+  }
+
+  .c-todo_list {
+    display: flex;
+    flex-direction: column;
+  }
+}
