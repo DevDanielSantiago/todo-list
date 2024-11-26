@@ -1,0 +1,100 @@
+.c-preview {
+  position: relative;
+
+  width: 230px;
+  height: fit-content;
+
+  padding: 14px 20px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  .c-edit,
+  .c-delete {
+    position: absolute;
+    font-size: 16px;
+
+    top: 8px;
+    display: none;
+  }
+
+  .c-edit {
+    right: 8px;
+
+    &:hover {
+      color: blue;
+    }
+  }
+
+  .c-delete {
+    right: 28px;
+
+    &:hover {
+      color: red;
+    }
+  }
+
+  .c-preview_title {
+    font-size: 16px;
+    line-height: 160%;
+
+    text-align: center;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+  }
+
+  .c-preview_activities {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+    margin-top: 12px;
+
+    .c-preview_activity {
+      display: flex;
+      gap: 16px;
+
+      align-items: center;
+      list-style: none;
+
+      .c-activity {
+        font-size: 14px;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .c-marker {
+        flex-shrink: 0;
+
+        box-sizing: content-box;
+        width: 4px;
+        height: 4px;
+        border: 1px solid black;
+        border-radius: 50%;
+
+        &[data-concluded="true"] {
+          width: 4px;
+          height: 4px;
+
+          border: 1px solid green;
+          background-color: green;
+        }
+      }
+    }
+  }
+}
+
+.c-preview:hover {
+  .c-edit,
+  .c-delete {
+    display: block;
+  }
+}
