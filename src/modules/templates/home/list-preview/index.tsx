@@ -1,4 +1,5 @@
 import { memo } from "react";
+import { SetStateAction } from "jotai";
 import { Tooltip } from "@mui/material";
 
 import EditIcon from "@mui/icons-material/ModeEditOutlineOutlined";
@@ -10,7 +11,6 @@ import { Activity } from "../../../../core/interfaces/activity";
 import EmptyListComponent from "../../../../core/components/empty-list";
 
 import "./styles.css";
-import { SetStateAction } from "jotai";
 
 interface ListPreviewProps {
   id: string;
