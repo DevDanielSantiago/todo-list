@@ -14,11 +14,19 @@ interface ListPreviewProps {
   id: string;
   title: string;
   activities: Activity[];
+  onNavigateList: (id: string) => void;
 }
 
-function ListPreviewComponent({ title, activities }: ListPreviewProps) {
+function ListPreviewComponent({
+  id,
+  title,
+  activities,
+  onNavigateList,
+}: ListPreviewProps) {
+  const handleNavigateList = () => onNavigateList(id);
+
   return (
-    <div className="c-preview">
+    <div className="c-preview" onClick={handleNavigateList}>
       <h3 className="c-preview_title">{title}</h3>
       {activities.length > 0 ? (
         <ul className="c-preview_activities">

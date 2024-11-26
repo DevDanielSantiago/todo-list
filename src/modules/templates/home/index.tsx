@@ -1,4 +1,4 @@
-import "./styles.css";
+import { useNavigate } from "react-router-dom";
 
 import ListPreviewComponent from "./list-preview";
 
@@ -7,7 +7,13 @@ import HeaderComponent from "../../../core/components/header";
 
 import { Lists } from "../../../core/mocks/lists";
 
+import "./styles.css";
+
 function HomeTemplate() {
+  const navigate = useNavigate();
+
+  const handleNavigateList = (id: string) => navigate("/list/" + id);
+
   return (
     <ContainerComponent>
       <HeaderComponent title="TO-DO List" buttonText="Adicionar" />
@@ -18,6 +24,7 @@ function HomeTemplate() {
             id={list.id}
             title={list.title}
             activities={list.activities}
+            onNavigateList={handleNavigateList}
           />
         ))}
       </div>
