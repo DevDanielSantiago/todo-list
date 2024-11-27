@@ -10,12 +10,16 @@ interface HeaderComponentProps {
 
 function HeaderComponent({ title, buttonText, onAdd }: HeaderComponentProps) {
   return (
-    <div className="c-header">
+    <header className="c-header">
       <h1 className="c-header_title">{title}</h1>
-      <button className="c-header_button" onClick={onAdd}>
+      <button
+        className="c-header_button"
+        aria-label={buttonText}
+        onClick={onAdd}
+      >
         {buttonText}
       </button>
-    </div>
+    </header>
   );
 }
 

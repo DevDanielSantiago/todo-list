@@ -10,12 +10,12 @@ interface EmptyListProps {
 
 function EmptyListComponent({ size, text }: EmptyListProps) {
   return (
-    <div className="c-empty">
-      <SegmentIcon className="c-empty_icon" data-size={size} />
+    <section className="c-empty">
+      <SegmentIcon aria-hidden className="c-empty_icon" data-size={size} />
       <span className="c-empty_text" data-size={size}>
         {text || "Não foram encontradas atividades"}
       </span>
-    </div>
+    </section>
   );
 }
 

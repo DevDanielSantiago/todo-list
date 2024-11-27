@@ -44,7 +44,7 @@ function ListPage() {
 
       setList(todoList);
     } catch (error) {
-      console.log(error);
+      // TODO Error message
     } finally {
       setLoading(false);
     }

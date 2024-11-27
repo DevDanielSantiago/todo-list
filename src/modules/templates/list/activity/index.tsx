@@ -37,28 +37,36 @@ function ActivityComponent({
   };
 
   return (
-    <div className="c-todo_activity">
-      <div className="c-todo_activity-main">
+    <section className="c-todo_activity">
+      <section className="c-todo_activity-main">
         <Checkbox
           style={{ color: "green" }}
           onChange={handleChange}
           checked={!!concludedAt}
         />
-        <div className="c-todo_about">
+        <article className="c-todo_about">
           <h3 className="c-todo_name">{name}</h3>
           {description && <p className="c-todo_description">{description}</p>}
-        </div>
-      </div>
+        </article>
+      </section>
 
-      <div className="c-todo_activity_options">
+      <section className="c-todo_activity_options">
         <Tooltip title="Editar atividade" placement="bottom">
-          <EditIcon className="c-edit" onClick={handleEdit} />
+          <EditIcon
+            aria-label="Editar atividade"
+            className="c-edit"
+            onClick={handleEdit}
+          />
         </Tooltip>
         <Tooltip title="Deletar atividade" placement="bottom">
-          <DeleteIcon className="c-delete" onClick={handleDelete} />
+          <DeleteIcon
+            aria-label="Deletar atividade"
+            className="c-delete"
+            onClick={handleDelete}
+          />
         </Tooltip>
-      </div>
-    </div>
+      </section>
+    </section>
   );
 }
 

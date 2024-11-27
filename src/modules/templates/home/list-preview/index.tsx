@@ -34,7 +34,7 @@ function ListPreviewComponent({
   const handleDelete = () => onDelete(id);
 
   return (
-    <div className="c-preview">
+    <section className="c-preview">
       <h3 className="c-preview_title" onClick={handleNavigateList}>
         {title}
       </h3>
@@ -55,12 +55,20 @@ function ListPreviewComponent({
       )}
 
       <Tooltip title="Editar nome da lista" placement="bottom">
-        <EditIcon className="c-edit" onClick={handleEdit} />
+        <EditIcon
+          aria-label="Editar nome da lista"
+          className="c-edit"
+          onClick={handleEdit}
+        />
       </Tooltip>
       <Tooltip title="Deletar lista" placement="bottom">
-        <DeleteIcon className="c-delete" onClick={handleDelete} />
+        <DeleteIcon
+          aria-label="Deletar lista"
+          className="c-delete"
+          onClick={handleDelete}
+        />
       </Tooltip>
-    </div>
+    </section>
   );
 }
 
