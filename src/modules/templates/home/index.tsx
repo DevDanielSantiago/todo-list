@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { atom, SetStateAction, useAtom } from "jotai";
 
-import { ListName } from "../../../core/interfaces/list";
+import { List, ListName } from "../../../core/interfaces/list";
 
 import ListPreviewComponent from "./list-preview";
 
@@ -9,7 +9,8 @@ import ContainerComponent from "../../../core/components/container";
 import HeaderComponent from "../../../core/components/header";
 import EmptyListComponent from "../../../core/components/empty-list";
 
-import { Lists } from "../../../core/mocks/lists";
+import { useBetStore } from "../../../core/stores/list";
+import { useDbService } from "../../../core/services/db.service";
 
 import ModalListName from "./modal-name";
 
@@ -22,6 +23,11 @@ function HomeTemplate() {
   const navigate = useNavigate();
   const [openModal, setOpenModal] = useAtom(openModalAtom);
   const [editName, setEditName] = useAtom(editNameAtom);
+
+  const { todoLists, updateTodoList, deleteTodoList, addTodoList } =
+    useBetStore();
+
+  const { updateList, deleteList, createList } = useDbService();
 
   const handleClose = () => {
     setOpenModal(false);
@@ -36,13 +42,52 @@ function HomeTemplate() {
     setOpenModal(true);
   };
 
-  const handleDelete = (id: string) => {
-    console.log("delete", id);
+  const handleDelete = async (id: string) => {
+    try {
+      const list = todoLists.find((act) => act.id === id);
+      if (!list) return;
+
+      await deleteList(id);
+      deleteTodoList(id);
+    } catch (error) {
+      // TODO Error message
+    }
+  };
+
+  const handleSaveUpdate = async (data: { id: string; title: string }) => {
+    try {
+      const todoList = todoLists.find((act) => act.id === data.id);
+      if (!todoList) return;
+
+      todoList["title"] = data.title;
+
+      await updateList(todoList);
+      updateTodoList(todoList);
+      setOpenModal(false);
+    } catch (error) {
+      // TODO Error message
+    }
+  };
+
+  const handleSaveNew = async (data: { title: string }) => {
+    try {
+      const todoList: List = {
+        id: `${todoLists.length + 1}`,
+        title: data.title,
+        activities: [],
+      };
+
+      await createList(todoList);
+      addTodoList(todoList);
+      setOpenModal(false);
+    } catch (error) {
+      // TODO Error message
+    }
   };
 
   const handleSubmit = (data: { title: string }) => {
-    if (editName) console.log("update", data.title);
-    else console.log("create", data.title);
+    if (editName) handleSaveUpdate({ title: data.title, id: editName.id });
+    else handleSaveNew(data);
   };
 
   return (
@@ -53,9 +98,9 @@ function HomeTemplate() {
         onAdd={handleAdd}
       />
 
-      {Lists.length > 0 ? (
+      {todoLists.length > 0 ? (
         <div className="c-preview_list">
-          {Lists.map((list, index) => (
+          {todoLists.map((list, index) => (
             <ListPreviewComponent
               key={index}
               id={list.id}
