@@ -57,7 +57,7 @@ function ListPage() {
 
   return (
     <Suspense fallback={<p>Carregando página...</p>}>
-      <LazyListTemplate loading={loading} />
+      <LazyListTemplate loading={loading} listId={id} />
     </Suspense>
   );
 }

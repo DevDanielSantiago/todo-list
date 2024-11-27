@@ -17,9 +17,10 @@ const editActivityAtom = atom<ActivityData>();
 
 interface ListTemplateProps {
   loading: boolean;
+  listId: string | undefined;
 }
 
-function ListTemplate({ loading }: ListTemplateProps) {
+function ListTemplate({ loading, listId }: ListTemplateProps) {
   const [openDialog, setOpenDialog] = useAtom(openDialogAtom);
   const [editActivity, setEditActivity] = useAtom(editActivityAtom);
 
@@ -80,9 +81,10 @@ function ListTemplate({ loading }: ListTemplateProps) {
     description: string | null;
   }) => {
     try {
-      if (!list) return;
+      if (!list || !listId) return;
       const activity: Activity = {
         id: `${list?.activities.length + 1}`,
+        listId: listId,
         name: data.name,
         description: data.description,
         concludedAt: null,
