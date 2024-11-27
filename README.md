@@ -1,46 +1,99 @@
-# Getting Started with Create React App
+# TO-DO List 📝
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Gerencie suas tarefas de forma simples e eficiente com o **TO-DO List**! Este projeto permite que você crie, edite e organize suas listas de atividades de maneira prática.
 
-## Available Scripts
+## 📖 Sobre o Projeto
 
-In the project directory, you can run:
+O **TO-DO List** é uma aplicação que facilita a organização das suas tarefas do dia a dia. Com ele, você pode:
 
-### `yarn start`
+- **Criar, editar e excluir listas** personalizadas.
+- **Adicionar, editar e excluir atividades** dentro de cada lista.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Ideal para quem deseja organizar a rotina de forma intuitiva e visual.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🎥 Demonstração
 
-### `yarn test`
+Aqui estão algumas telas da aplicação:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Tela Inicial (Home)
 
-### `yarn build`
+![Tela inicial](./public/assets/home-screenshot.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Tela de Listagem de Atividades
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Tela de atividades](./public/assets/activities-screenshot.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🛠️ Tecnologias Utilizadas
 
-### `yarn eject`
+Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- **[React](https://reactjs.org/):** Biblioteca JavaScript para construção de interfaces de usuário.
+- **[React Material](https://mui.com/):** Componentes estilizados e prontos para uso.
+- **[React Router DOM](https://reactrouter.com/):** Gerenciamento de rotas.
+- **[Jest](https://jestjs.io/):** Framework de testes.
+- **[Jotai](https://jotai.org/):** Gerenciamento de estado atômico.
+- **Zustand:** Gerenciamento de estado leve e flexível.
+- **TypeScript:** Tipagem estática para maior segurança no código.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🚀 Como Instalar e Rodar o Projeto
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Siga os passos abaixo para rodar o projeto localmente:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1.  **Clone o repositório:**
 
-## Learn More
+    bash
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    `git clone https://github.com/DevDanielSantiago/todo-list.git`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2.  **Entre na pasta do projeto:**
+
+    `cd todo-list`
+
+3.  **Instale as dependências:**
+
+    `yarn install`
+
+4.  **Inicie o servidor de desenvolvimento:**
+
+    `yarn start`
+
+Agora você pode acessar o projeto no navegador através do endereço: `http://localhost:3000`.
+
+## 🧪 Como Rodar os Testes
+
+Para rodar os testes e verificar a cobertura do código:
+
+Copiar código
+
+`yarn test`
+
+Os testes são realizados com **Jest**, garantindo a qualidade e confiabilidade do código.
+
+## 📬 Como Contribuir
+
+Contribuições são bem-vindas! Para colaborar com o projeto:
+
+1.  Faça um fork do repositório.
+2.  Crie uma nova branch para a sua feature:
+
+    Copiar código
+
+    `git checkout -b minha-feature`
+
+3.  Commit suas alterações:
+
+    Copiar código
+
+    `git commit -m 'Adicionei uma nova feature'`
+
+4.  Faça o push para a branch:
+
+    Copiar código
+
+    `git push origin minha-feature`
+
+5.  Abra um Pull Request.
+
+## 📄 Licença
+
+Este projeto está sob a licença **MIT**. Sinta-se à vontade para usá-lo e modificá-lo!
